@@ -1,7 +1,7 @@
 Lista de Verificación del Proyecto Integrador
 
 Backend (FastAPI + SQLModel)
-● [ ] Entorno: Uso de .venv, requirements.txt y FastAPI funcionando en modo
+● [ x ] Entorno: Uso de .venv, requirements.txt y FastAPI funcionando en modo
 dev.
 ● [ ] Modelado: Tablas creadas con SQLModel incluyendo relaciones
 Relationship (1:N y N:N).

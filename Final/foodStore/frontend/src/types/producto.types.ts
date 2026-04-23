@@ -6,7 +6,7 @@ export interface Producto extends BaseEntity {
     nombre: string;
     descripcion?: string;
     precio_base: number;
-    imagenes_url?: string;
+    imagenes_url: string[]; // CORRECCIÓN: Lista de strings
     stock_cantidad: number;
     disponible: boolean;
 
@@ -18,7 +18,7 @@ export interface ProductoCreate {
   nombre: string;
   descripcion?: string;
   precio_base: number;
-  imagenes_url?: string;
+  imagenes_url?: string[]; // CORRECCIÓN: Lista de strings
   stock_cantidad?: number;
   disponible?: boolean;
 
