@@ -55,14 +55,14 @@ const CategoriasPage = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-red"></div>
       </div>
     );
   }
 
   if (isError) {
     return (
-      <div className="bg-red-900/20 border border-red-500/50 p-4 rounded-xl text-red-200 text-center">
+      <div className="bg-red-950/20 border border-brand-red/50 p-4 rounded-xl text-red-200 text-center">
         Error al cargar las categorías.
       </div>
     );
@@ -72,15 +72,15 @@ const CategoriasPage = () => {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-4xl font-black bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent flex items-center gap-3">
-            <LayoutGrid size={36} className="text-blue-500" /> Categorías
+          <h1 className="text-4xl font-black text-brand-red flex items-center gap-3 uppercase italic tracking-tighter">
+            <LayoutGrid size={36} className="text-brand-red" /> Categorías
           </h1>
-          <p className="text-zinc-500 mt-1">Organizá tu menú por categorías y jerarquías.</p>
+          <p className="text-zinc-500 mt-1 uppercase text-[10px] font-bold tracking-widest">Organizá tu menú por categorías y jerarquías.</p>
         </div>
 
         <button
           onClick={handleCreate}
-          className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-blue-900/20 active:scale-95"
+          className="flex items-center justify-center gap-2 bg-brand-red hover:brightness-110 text-white font-black uppercase tracking-wider px-6 py-3 rounded-xl transition-all shadow-lg shadow-brand-red/40 active:scale-95"
         >
           <Plus size={20} /> Nueva Categoría
         </button>

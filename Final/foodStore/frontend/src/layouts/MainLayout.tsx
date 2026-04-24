@@ -1,24 +1,20 @@
 import { Outlet, NavLink } from "react-router-dom";
-import { LayoutGrid, Salad, Package, ShoppingBag, ChevronRight } from "lucide-react";
+import { LayoutGrid, Salad, Package, ChevronRight } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const MainLayout = () => {
   const menuItems = [
-    { to: "/categorias", label: "Categorías", icon: <LayoutGrid size={20} />, color: "hover:text-blue-400" },
-    { to: "/ingredientes", label: "Ingredientes", icon: <Salad size={20} />, color: "hover:text-emerald-400" },
-    { to: "/productos", label: "Productos", icon: <Package size={20} />, color: "hover:text-violet-400" },
+    { to: "/categorias", label: "Categorías", icon: <LayoutGrid size={20} />, color: "hover:text-brand-red" },
+    { to: "/ingredientes", label: "Ingredientes", icon: <Salad size={20} />, color: "hover:text-brand-red" },
+    { to: "/productos", label: "Productos", icon: <Package size={20} />, color: "hover:text-brand-red" },
   ];
 
   return (
-    <div className="flex min-h-screen bg-zinc-950 text-zinc-100 selection:bg-violet-500/30">
+    <div className="flex min-h-screen bg-transparent text-zinc-100 selection:bg-brand-red/30">
       {/* Sidebar Flotante */}
-      <aside className="w-72 border-r border-zinc-800/50 bg-zinc-900/20 backdrop-blur-xl flex flex-col p-6 sticky top-0 h-screen">
-        <div className="flex items-center gap-3 mb-10 px-2">
-          <div className="bg-gradient-to-br from-violet-600 to-indigo-600 p-2 rounded-xl shadow-lg shadow-violet-900/20">
-            <ShoppingBag size={24} className="text-white" />
-          </div>
-          <span className="text-xl font-black tracking-tighter">
-            FOOD<span className="text-violet-500">STORE</span>
-          </span>
+      <aside className="w-72 border-r border-zinc-900 bg-zinc-950/50 backdrop-blur-xl flex flex-col p-6 sticky top-0 h-screen">
+        <div className="flex flex-col items-center mb-10 px-2">
+          <img src={logo} alt="Rock N Burger" className="w-48 h-auto" />
         </div>
 
         <nav className="flex-1 space-y-2">
@@ -46,13 +42,11 @@ const MainLayout = () => {
           ))}
         </nav>
 
-        <div className="mt-auto pt-6 border-t border-zinc-800/50">
-          <div className="bg-gradient-to-br from-zinc-800/50 to-zinc-900/50 p-4 rounded-2xl border border-zinc-700/30">
-            <p className="text-xs font-bold text-zinc-400 mb-1">Estado del Servidor</p>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-              <span className="text-[10px] text-emerald-400 font-mono">ONLINE: Port 8000</span>
-            </div>
+        <div className="mt-auto pt-6 border-t border-zinc-900 px-2">
+          <p className="text-[10px] font-bold text-zinc-600 uppercase tracking-widest mb-2">Estado del Servidor</p>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+            <span className="text-[10px] text-emerald-400 font-mono">ROCKING: Port 8000</span>
           </div>
         </div>
       </aside>
@@ -60,10 +54,6 @@ const MainLayout = () => {
       {/* Contenido Principal */}
       <main className="flex-1 p-10 max-w-7xl mx-auto w-full">
         <div className="relative">
-          {/* Decoración de fondo sutil */}
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-violet-600/10 blur-[120px] rounded-full pointer-events-none"></div>
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-600/5 blur-[120px] rounded-full pointer-events-none"></div>
-          
           <Outlet />
         </div>
       </main>

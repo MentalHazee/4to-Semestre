@@ -19,14 +19,14 @@ const Modal = ({ isOpen, onClose, title, children }: Props) => {
       />
       
       {/* Contenido del Modal */}
-      <div className="relative w-full max-w-lg bg-zinc-900 border border-zinc-800 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
-        <div className="flex items-center justify-between p-6 border-b border-zinc-800/50">
-          <h2 className="text-xl font-black bg-gradient-to-r from-zinc-100 to-zinc-400 bg-clip-text text-transparent">
+      <div className="relative w-full max-w-lg bg-zinc-950 border border-brand-red/20 rounded-3xl shadow-2xl shadow-brand-red/10 overflow-hidden animate-in fade-in zoom-in duration-300">
+        <div className="flex items-center justify-between p-6 border-b border-brand-red/10 bg-gradient-to-r from-brand-red/5 to-transparent">
+          <h2 className="text-xl font-black uppercase tracking-widest text-brand-red">
             {title}
           </h2>
           <button 
             onClick={onClose}
-            className="p-2 rounded-xl bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-all"
+            className="p-2 rounded-xl bg-zinc-900 text-zinc-500 hover:text-white hover:bg-brand-red transition-all border border-zinc-800 hover:border-brand-red/50"
           >
             <X size={20} />
           </button>

@@ -47,43 +47,43 @@ const CategoriaForm = ({ initialData, onSubmit }: Props) => {
           type="text"
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}
-          className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+          className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-3 focus:ring-2 focus:ring-red-600 outline-none transition-all"
           placeholder="Ej: Pizzas, Bebidas..."
         />
-        {error && <p className="text-red-400 text-xs mt-1">{error}</p>}
+        {error && <p className="text-red-500 text-xs mt-1 font-bold">{error}</p>}
       </div>
 
       <div className="space-y-1">
-        <label className="text-sm font-medium text-zinc-400">Descripción</label>
+        <label className="text-sm font-medium text-zinc-500">Descripción</label>
         <textarea
           value={descripcion}
           onChange={(e) => setDescripcion(e.target.value)}
-          className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none h-20"
+          className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-3 focus:ring-2 focus:ring-red-600 outline-none h-20"
           placeholder="¿De qué trata esta categoría?"
         />
       </div>
 
       <div className="space-y-1">
-        <label className="text-sm font-medium text-zinc-400 flex items-center gap-2">
+        <label className="text-sm font-medium text-zinc-500 flex items-center gap-2">
           <ImageIcon size={14} /> URL Imagen
         </label>
         <input
           type="text"
           value={imagenUrl}
           onChange={(e) => setImagenUrl(e.target.value)}
-          className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none"
+          className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-3 focus:ring-2 focus:ring-red-600 outline-none"
           placeholder="https://..."
         />
       </div>
 
       <div className="space-y-1">
-        <label className="text-sm font-medium text-zinc-400 flex items-center gap-2">
+        <label className="text-sm font-medium text-zinc-500 flex items-center gap-2">
           <FolderTree size={14} /> Categoría Superior (Opcional)
         </label>
         <select
           value={parentId || 0}
           onChange={(e) => setParentId(Number(e.target.value) || null)}
-          className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none appearance-none"
+          className="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-3 focus:ring-2 focus:ring-red-600 outline-none appearance-none"
         >
           <option value={0}>Ninguna (Categoría Raíz)</option>
           {availableParents.map((c) => (
@@ -94,8 +94,8 @@ const CategoriaForm = ({ initialData, onSubmit }: Props) => {
         </select>
       </div>
 
-      <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-blue-900/20 active:scale-[0.98] mt-4">
-        {initialData ? "Actualizar Categoría" : "Crear Categoría"}
+      <button className="w-full bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white font-black uppercase tracking-widest py-4 rounded-xl transition-all shadow-lg shadow-red-900/40 active:scale-[0.98] mt-4">
+        {initialData ? "ACTUALIZAR" : "CREAR CATEGORÍA"}
       </button>
     </form>
   );

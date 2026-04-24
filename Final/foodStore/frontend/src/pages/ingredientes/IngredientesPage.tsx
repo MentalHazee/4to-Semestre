@@ -56,14 +56,14 @@ const IngredientesPage = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-red"></div>
       </div>
     );
   }
 
   if (isError) {
     return (
-      <div className="bg-red-900/20 border border-red-500/50 p-4 rounded-xl text-red-200 text-center">
+      <div className="bg-red-950/20 border border-brand-red/50 p-4 rounded-xl text-red-200 text-center">
         Error al cargar los ingredientes. Verificá la conexión con la API.
       </div>
     );
@@ -73,15 +73,15 @@ const IngredientesPage = () => {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-4xl font-black bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent flex items-center gap-3">
-            <Salad size={36} className="text-emerald-500" /> Ingredientes
+          <h1 className="text-4xl font-black text-brand-red flex items-center gap-3 uppercase italic tracking-tighter">
+            <Salad size={36} className="text-brand-red" /> Ingredientes
           </h1>
-          <p className="text-zinc-500 mt-1">Gestioná los ingredientes y sus alérgenos.</p>
+          <p className="text-zinc-500 mt-1 uppercase text-[10px] font-bold tracking-widest">Gestioná los ingredientes y sus alérgenos.</p>
         </div>
 
         <button
           onClick={handleCreate}
-          className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl transition-all shadow-lg shadow-emerald-900/20 active:scale-95"
+          className="flex items-center justify-center gap-2 bg-brand-red hover:brightness-110 text-white font-black uppercase tracking-wider px-6 py-3 rounded-xl transition-all shadow-lg shadow-brand-red/40 active:scale-95"
         >
           <Plus size={20} /> Nuevo Ingrediente
         </button>

@@ -1,13 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-red: #B70219;
+}
+
 :root {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'IntRr', system-ui, -apple-system, sans-serif;
   color-scheme: dark;
 }
 
 body {
   margin: 0;
-  background-color: #09090b; /* zinc-950 */
+  background-color: #000000;
+  background-image: url('./assets/background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #ffffff;
   overflow-x: hidden;
 }
 

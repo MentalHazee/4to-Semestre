@@ -56,11 +56,36 @@ class ProductoService:
             if not db_producto:
                 raise HTTPException(status_code=404, detail="Producto no encontrado")
             
-            update_data = producto_data.model_dump(exclude_unset=True)
-            update_data.pop("categorias_ids", None)
-            update_data.pop("ingredientes_ids", None)
+            data_dict = producto_data.model_dump(exclude_unset=True)
+            categorias_ids = data_dict.pop("categorias_ids", None)
+            ingredientes_ids = data_dict.pop("ingredientes_ids", None)
             
-            uow.productos.update(db_producto, update_data)
+            uow.productos.update(db_producto, data_dict)
+            uow._session.flush()
+
+            # Actualizar categorías si se enviaron
+            if categorias_ids is not None:
+                # Borrar existentes
+                stmt = select(ProductoCategoria).where(ProductoCategoria.producto_id == producto_id)
+                results = uow._session.exec(stmt).all()
+                for r in results:
+                    uow._session.delete(r)
+                # Agregar nuevas
+                for cat_id in categorias_ids:
+                    uow.productos_categorias.add(ProductoCategoria(producto_id=producto_id, categoria_id=cat_id))
+
+            # Actualizar ingredientes si se enviaron
+            if ingredientes_ids is not None:
+                # Borrar existentes
+                stmt = select(ProductoIngrediente).where(ProductoIngrediente.producto_id == producto_id)
+                results = uow._session.exec(stmt).all()
+                for r in results:
+                    uow._session.delete(r)
+                # Agregar nuevas
+                for ing_id in ingredientes_ids:
+                    uow.productos_ingredientes.add(ProductoIngrediente(producto_id=producto_id, ingrediente_id=ing_id))
+
+            uow._session.commit()
             uow._session.refresh(db_producto)
             _ = db_producto.categorias
             _ = db_producto.ingredientes
