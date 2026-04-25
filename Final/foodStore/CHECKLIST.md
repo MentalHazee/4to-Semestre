@@ -3,37 +3,38 @@ Lista de Verificación del Proyecto Integrador
 Backend (FastAPI + SQLModel)
 ● [ x ] Entorno: Uso de .venv, requirements.txt y FastAPI funcionando en modo
 dev.
-● [ ] Modelado: Tablas creadas con SQLModel incluyendo relaciones
+● [ x ] Modelado: Tablas creadas con SQLModel incluyendo relaciones
 Relationship (1:N y N:N).
-● [ ] Validación: Uso de Annotated, Query y Path para reglas de negocio (ej.
+● [ x ] Validación: Uso de Annotated, Query y Path para reglas de negocio (ej.
 longitudes, rangos).
-● [ ] CRUD Persistente: Endpoints funcionales para Crear, Leer, Actualizar y
+● [ x ] CRUD Persistente: Endpoints funcionales para Crear, Leer, Actualizar y
 Borrar en PostgreSQL.
-● [ ] Seguridad de Datos: Implementación de response_model para no filtrar
+● [ x ] Seguridad de Datos: Implementación de response_model para no filtrar
 datos sensibles o innecesarios.
-● [ ] Estructura: Código organizado por módulos (routers, schemas, services,
+● [ x ] Estructura: Código organizado por módulos (routers, schemas, services,
 models, uow).
 
 Frontend (React + TypeScript + Tailwind)
-● [ ] Setup: Proyecto creado con Vite + TS y estructura de carpetas limpia.
-● [ ] Componentes: Uso de componentes funcionales y Props debidamente
+● [ x ] Setup: Proyecto creado con Vite + TS y estructura de carpetas limpia.
+● [ x ] Componentes: Uso de componentes funcionales y Props debidamente
 tipadas con interfaces.
-● [ ] Estilos: Interfaz construida íntegramente con clases de utilidad de Tailwind
+● [ x ] Estilos: Interfaz construida íntegramente con clases de utilidad de Tailwind
 CSS 4.
-● [ ] Navegación: Configuración de react-router-dom con al menos una ruta
+● [ x ] Navegación: Configuración de react-router-dom con al menos una ruta
 dinámica (ej. /detalle/:id).
-● [ ] Estado Local: Uso de useState para el manejo de formularios o UI
+● [ x ] Estado Local: Uso de useState para el manejo de formularios o UI
 interactiva.
 
 Integración y Server State
-● [ ] Lectura (useQuery): Listados y detalles consumiendo datos reales de la
+● [ x ] Lectura (useQuery): Listados y detalles consumiendo datos reales de la
 API.
-● [ ] Escritura (useMutation): Formularios que envían datos al backend con
+● [ x ] Escritura (useMutation): Formularios que envían datos al backend con
 éxito.
-● [ ] Sincronización: Uso de invalidateQueries para refrescar la UI
+● [ x ] Sincronización: Uso de invalidateQueries para refrescar la UI
 automáticamente tras un cambio.
-● [ ] Feedback: Gestión visual de estados de "Cargando..." y "Error" en las
+● [ x ] Feedback: Gestión visual de estados de "Cargando..." y "Error" en las
 peticiones.
+
 
 Video de Presentación
 ● [ ] Duración: El video dura 15 minutos o menos.

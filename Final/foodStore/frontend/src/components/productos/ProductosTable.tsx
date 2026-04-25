@@ -89,7 +89,7 @@ const ProductoTable = ({ data, onEdit, onDelete }: Props) => {
               <td colSpan={4} className="p-16 text-center">
                 <div className="flex flex-col items-center gap-4 text-zinc-700">
                     <Package size={64} className="opacity-10" />
-                    <p className="font-black uppercase tracking-widest text-lg">El inventario está vacío. ¡Ponéte las pilas!</p>
+                    <p className="font-black uppercase tracking-widest text-lg">El inventario está vacío</p>
                 </div>
               </td>
             </tr>
